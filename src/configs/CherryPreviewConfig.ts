@@ -8,28 +8,55 @@
 
 // 按需导入 ECharts 组件
 import * as echarts from 'echarts/core'
-// import { BarChart, LineChart, PieChart } from 'echarts/charts'
-// import {
-//   TitleComponent,
-//   TooltipComponent,
-//   GridComponent,
-//   LegendComponent
-// } from 'echarts/components'
-// import { CanvasRenderer } from 'echarts/renderers'
+import {
+  BarChart,
+  LineChart,
+  PieChart,
+  HeatmapChart,
+  RadarChart,
+  ScatterChart,
+  SankeyChart
+} from 'echarts/charts'
+import {
+  TitleComponent,
+  TooltipComponent,
+  GridComponent,
+  LegendComponent,
+  ToolboxComponent,
+  DataZoomComponent,
+  VisualMapComponent,
+  GraphicComponent
+} from 'echarts/components'
+import { CanvasRenderer } from 'echarts/renderers'
 
-// // 注册必要的 ECharts 组件
-// echarts.use([
-//   BarChart,
-//   LineChart,
-//   PieChart,
-//   TitleComponent,
-//   TooltipComponent,
-//   GridComponent,
-//   LegendComponent,
-//   CanvasRenderer
-// ])
+// 注册所有可能用到的 ECharts 组件
+// Cherry Markdown 需要完整的组件注册才能正常渲染各种图表
+echarts.use([
+  // 图表类型
+  BarChart,
+  LineChart,
+  PieChart,
+  HeatmapChart,
+  RadarChart,
+  ScatterChart,
+  SankeyChart,
+
+  // 组件
+  TitleComponent,
+  TooltipComponent,
+  GridComponent,
+  LegendComponent,
+  ToolboxComponent,
+  DataZoomComponent,
+  VisualMapComponent,
+  GraphicComponent,
+
+  // 渲染器
+  CanvasRenderer
+])
 
 import mermaid from 'mermaid';
+
 const previewConfig = {
   id: 'markdown',
   nameSpace: 'cherry',// 定义主题的作用范围，相同nameSpace的实例共享主题配置
