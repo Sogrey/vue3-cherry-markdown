@@ -32,22 +32,17 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Check pnpm version
+    - name: Check npm version
       run: |
-        echo "📦 当前 pnpm 版本："
-        pnpm --version
-        echo "✅ 使用 pnpm 进行构建"
-
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        version: 8
+        echo "📦 当前 npm 版本："
+        npm --version
+        echo "✅ 使用 npm 进行构建"
 
     - name: Install dependencies
-      run: pnpm install
+      run: npm install
 
     - name: Build
-      run: pnpm run build
+      run: npm run build
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
